@@ -5,7 +5,7 @@
 pub const ip: &str = "127.0.0.1";
 
 /// daemon's localhost port
-pub const port: u16 = 12345;
+pub const port: u16 = 54321;
 
 /// socket bind string
 pub const bind: &str = const_format::formatcp!("{ip}:{port}");

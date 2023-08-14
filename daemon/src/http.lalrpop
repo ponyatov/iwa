@@ -1,15 +1,23 @@
 // #![allow(unused)]
 
+use crate::*;
+
 use std::net::TcpStream;
 use std::io::Write;
 
-grammar(stream: &mut TcpStream);
+grammar(registry: &mut lib::Registry, stream: &mut TcpStream);
 
-pub GET:() = "GET " URL r" HTTP/1.1";
+pub GET:() = "GET " URL " HTTP/1.1";
 
 URL:() = {
-    <req:"/"> => {
-        stream.write(format!("HTTP 200 OK\nContext-Type: text/plain\n\n{req}\n").as_bytes()).unwrap();},
-    "/favicon.ico" => {
-        stream.write(b"HTTP 200 OK\nContext-Type: image/png\n\n").unwrap();}
+    <req:"/"> =>
+        {
+        serve(stream, TEXT_HTML, INDEX_HEAD );
+        stream.write(format!("<pre>\n{}\n</pre>\n","registry").as_bytes()).unwrap();
+        stream.write(INDEX_TAIL).unwrap();;
+        },
+    "/favicon.ico" =>
+        {serve(stream, IMAGE_PNG, LOGO_PNG   );},
+    "/logo.png" =>
+        {serve(stream, IMAGE_PNG, LOGO_PNG   );},
 }
