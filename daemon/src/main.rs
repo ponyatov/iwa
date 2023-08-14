@@ -37,8 +37,8 @@ const TEXT_CSS: &[u8] = b"Content-Type: text/css\n";
 const IMAGE_PNG: &[u8] = b"Content-Type: image/png\n";
 const APP_MANIFEST: &[u8] = b"application/manifest+json\n";
 
-const INDEX_HEAD: &[u8] = include_bytes!("../static/index.html.head");
-const INDEX_TAIL: &[u8] = include_bytes!("../static/index.html.tail");
+const INDEX_HEAD: &[u8] = include_bytes!("../template/index.html.head");
+const INDEX_TAIL: &[u8] = include_bytes!("../template/index.html.tail");
 const LOGO_PNG: &[u8] = include_bytes!("../static/logo_512.png");
 const LOGO_48: &[u8] = include_bytes!("../static/logo_48.png");
 const LOGO_72: &[u8] = include_bytes!("../static/logo_72.png");
