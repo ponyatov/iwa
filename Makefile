@@ -27,7 +27,7 @@ daemon:
 	$(WATCH) -w $@ -x 'run -p $@'
 
 # merge
-MERGE += README.md Makefile
+MERGE += README.md Makefile $(S)
 MERGE += .gitignore .gitattributes .stignore
 MERGE += apt.dev apt.txt apt.msys
 
