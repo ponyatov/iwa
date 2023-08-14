@@ -1,6 +1,14 @@
 [package]
-name    = "iwa-daemon"
+name    = "daemon"
 version = "0.0.1"
 edition = "2021"
 
+[build-dependencies]
+lalrpop = "*"
+
 [dependencies]
+config = { path = "../config" }
+lib    = { path = "../lib"    }
+
+lalrpop-util = { version = "*", features = ["lexer"] }
+regexp = "*"
