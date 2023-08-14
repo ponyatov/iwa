@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+        <title>iwa</title>
         <!-- <link rel="shortcut icon" href="logo.png"> -->
+        <link rel="stylesheet" href="css.css">
+        <link rel="manifest" href="/manifest">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     </head>
-    <style>
-        * { background: #222; color: lightgreen;
-            font-family: monospace; }
-    </style>
     <body>
-        <img src="/logo.png" id="logo" width="10%">
+        <img src="/logo.png" id="logo">

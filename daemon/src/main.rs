@@ -33,11 +33,22 @@ fn handle(registry: &mut lib::Registry, mut stream: TcpStream) {
 const OK_200: &[u8] = b"HTTP 200 OK\n";
 const TEXT_PLAIN: &[u8] = b"Content-Type: text/plain\n";
 const TEXT_HTML: &[u8] = b"Content-Type: text/html\n";
+const TEXT_CSS: &[u8] = b"Content-Type: text/css\n";
 const IMAGE_PNG: &[u8] = b"Content-Type: image/png\n";
+const APP_MANIFEST: &[u8] = b"application/manifest+json\n";
 
 const INDEX_HEAD: &[u8] = include_bytes!("../static/index.html.head");
 const INDEX_TAIL: &[u8] = include_bytes!("../static/index.html.tail");
-const LOGO_PNG: &[u8] = include_bytes!("../static/logo.png");
+const LOGO_PNG: &[u8] = include_bytes!("../static/logo_512.png");
+const LOGO_48: &[u8] = include_bytes!("../static/logo_48.png");
+const LOGO_72: &[u8] = include_bytes!("../static/logo_72.png");
+const LOGO_96: &[u8] = include_bytes!("../static/logo_96.png");
+const LOGO_128: &[u8] = include_bytes!("../static/logo_128.png");
+const LOGO_192: &[u8] = include_bytes!("../static/logo_192.png");
+const LOGO_384: &[u8] = include_bytes!("../static/logo_384.png");
+const LOGO_512: &[u8] = include_bytes!("../static/logo_512.png");
+const CSS: &[u8] = include_bytes!("../static/css.css");
+const MANIFEST: &[u8] = include_bytes!("../static/manifest");
 
 pub fn serve(mut stream: &TcpStream, ctype: &[u8], data: &[u8]) {
     stream.write(OK_200).unwrap();
