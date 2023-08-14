@@ -8,7 +8,7 @@ BRANCH  = $(shell git rev-parse --abbrev-ref HEAD)
 CORES  ?= $(shell grep processor /proc/cpuinfo | wc -l)
 
 # src
-S += Cargo.toml Cargo.lock
+S += Cargo.toml Cargo.lock src
 S += config lib daemon
 
 WATCH  = cargo watch -w config -w lib
