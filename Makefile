@@ -28,7 +28,7 @@ daemon:
 
 # merge
 MERGE += README.md Makefile
-MERGE += .gitignore .gitattribute .stignore
+MERGE += .gitignore .gitattributes .stignore
 MERGE += apt.dev apt.txt apt.msys
 
 .PHONY: dev
