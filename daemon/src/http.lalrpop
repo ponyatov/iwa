@@ -1,1 +1,15 @@
-grammar;
+// #![allow(unused)]
+
+use std::net::TcpStream;
+use std::io::Write;
+
+grammar(stream: &mut TcpStream);
+
+pub GET:() = "GET " URL r" HTTP/1.1";
+
+URL:() = {
+    <req:"/"> => {
+        stream.write(format!("HTTP 200 OK\nContext-Type: text/plain\n\n{req}\n").as_bytes()).unwrap();},
+    "/favicon.ico" => {
+        stream.write(b"HTTP 200 OK\nContext-Type: image/png\n\n").unwrap();}
+}

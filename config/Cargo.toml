@@ -1,6 +1,10 @@
 [package]
-name    = "config"
-version = "0.0.1"
-edition = "2021"
+name        = "config"
+version     = "0.0.1"
+edition     = "2021"
+
+description = "iwa project-level configuration"
+authors     = ["Dmitry Ponyatov <dponyatov@gmail.com>"]
 
 [dependencies]
+const_format = "*"

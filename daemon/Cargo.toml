@@ -1,7 +1,10 @@
 [package]
-name    = "daemon"
-version = "0.0.1"
-edition = "2021"
+name        = "daemon"
+version     = "0.0.1"
+edition     = "2021"
+
+description = "daemon: web interface & iw package router"
+authors     = ["Dmitry Ponyatov <dponyatov@gmail.com>"]
 
 [build-dependencies]
 lalrpop = "*"
@@ -11,4 +14,4 @@ config = { path = "../config" }
 lib    = { path = "../lib"    }
 
 lalrpop-util = { version = "*", features = ["lexer"] }
-regexp = "*"
+regex = "*"
